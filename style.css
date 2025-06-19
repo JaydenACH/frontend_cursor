@@ -263,4 +263,16 @@ input[type="reset"] {
 .clickable-row button:focus,
 .clickable-row button:active {
     transform: none !important;
+}
+
+.table tbody tr:hover {
+    background: var(--main-gradient);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-weight: 500;
 } 
