@@ -1,231 +1,182 @@
 /* ========================================
-   BOOTSTRAP COLOR CUSTOMIZATION SYSTEM
+   THEME COLORS & BOOTSTRAP OVERRIDES
    ======================================== */
 
-/* CSS Custom Properties for easy color customization */
 :root {
-    /* Primary Bootstrap Colors - Change these to customize your theme */
-    --bs-primary: #7723af;
-    --bs-primary-rgb: 0, 123, 255;
-    --bs-secondary: #a944ec;
-    --bs-secondary-rgb: 108, 117, 125;
-    --bs-success: #2ca728;
-    --bs-success-rgb: 40, 167, 69;
-    --bs-info: #168c9e;
-    --bs-info-rgb: 23, 162, 184;
-    --bs-warning: #ffc107;
-    --bs-warning-rgb: 255, 193, 7;
-    --bs-danger: #dc3545;
-    --bs-danger-rgb: 220, 53, 69;
-    --bs-light: #f8f9fa;
-    --bs-light-rgb: 248, 249, 250;
-    --bs-dark: #4e4e4e;
-    --bs-dark-rgb: 52, 58, 64;
-    --bs-body-bg: #ffffff;
-    --bs-link-color: #dca7ff;
+  /* Main Theme Colors */
+  --white: #FFFDFDff;
+  --lavender-web: #DBD5ECff;
+  --wisteria: #B7ADDBff;
+  --tropical-indigo: #9485CBff;
+  --slate-blue: #705CBAff;
+  --persian-blue: #4C34A9ff;
+  --ultramarine: #280C98ff;
 
-    /* Additional Colors */
-    --bs-white: #ffffff;
-    --bs-black: #000000;
-    --bs-gray-100: #f8f9fa;
-    --bs-gray-200: #e9ecef;
-    --bs-gray-300: #dee2e6;
-    --bs-gray-400: #ced4da;
-    --bs-gray-500: #adb5bd;
-    --bs-gray-600: #6c757d;
-    --bs-gray-700: #8a8a8a;
-    --bs-gray-800: #343a40;
-    --bs-gray-900: #212529;
+  /* Font Colors */
+  --timberwolf: #D5D5D5;
+  --silver: #B2B2B2;
+  --dim-gray: #6B6B6B;
+  --outer-space: #474747;
+  --eerie-black: #242424;
+  --black: #000000;
 
-    /* Custom Theme Colors - Add your own colors here */
-    --custom-accent: #007bff;
-    --custom-accent-hover: #0056b3;
-    --custom-accent-light: #e3f2fd;
-    --custom-accent-dark: #004085;
+  /* Bootstrap theme color overrides */
+  --bs-primary: var(--ultramarine);
+  --bs-secondary: var(--persian-blue);
+  --bs-info: var(--lavender-web);
+  --bs-dark: var(--outer-space);
+  --bs-light: var(--timberwolf);
 
-    /* Component-specific colors */
-    --navbar-bg: var(--bs-dark);
-    --navbar-text: var(--bs-white);
-    --sidebar-bg: var(--bs-dark);
-    --sidebar-text: var(--bs-gray-500);
-    --sidebar-text-hover: var(--bs-white);
-    --sidebar-bg-hover: var(--bs-gray-700);
-    --sidebar-active-bg: var(--bs-primary);
-    --sidebar-active-text: var(--bs-white);
-    --sidebar-border: var(--bs-gray-700);
-    /* Button variations */
-    --btn-primary-bg: var(--bs-primary);
-    --btn-primary-border: var(--bs-primary);
-    --btn-primary-hover-bg: #9a2ee2;
-    --btn-primary-hover-border: #5b1f83;
-    --btn-primary-active-bg: #004085;
-    --btn-primary-active-border: #004085;
+  /* Font colors */
+  --bs-body-color: var(--eerie-black);
+  --bs-body-bg: var(--white);
+  --bs-muted: var(--silver);
 
-    /* Card colors */
-    --card-bg: var(--bs-white);
-    --card-border: var(--bs-gray-300);
-    --card-header-bg: var(--bs-gray-100);
+  /* Link colors */
+  --bs-link-color: var(--white);
+  --bs-link-hover-color: var(--wisteria);
 
-    /* Form colors */
-    --form-control-border: var(--bs-gray-400);
-    --form-control-focus-border: var(--bs-primary);
-    --form-control-focus-box-shadow: rgba(var(--bs-primary-rgb), 0.25);
+  /* Component-specific colors */
+  --navbar-bg: var(--bs-dark);
+  --navbar-text: var(--bs-white);
+  --sidebar-bg: var(--bs-dark);
+  --sidebar-text: var(--bs-muted);
+  --sidebar-text-hover: var(--bs-white);
+  --sidebar-bg-hover: var(--bs-secondary);
+  --sidebar-active-bg: var(--bs-primary);
+  --sidebar-active-text: var(--bs-white);
+  --sidebar-border: var(--bs-secondary);
 
-    /* Alert colors */
-    --alert-primary-bg: rgba(var(--bs-primary-rgb), 0.1);
-    --alert-primary-border: rgba(var(--bs-primary-rgb), 0.2);
-    --alert-primary-text: var(--bs-primary);
+  /* Card colors */
+  --card-bg: var(--bs-white);
+  --card-border: var(--bs-light);
+  --card-header-bg: var(--bs-light);
 
-    /* Table colors */
-    --table-bg: var(--bs-white);
-    --table-border: var(--bs-gray-300);
-    --table-striped-bg: var(--bs-gray-100);
-
-    /* Link colors */
-    --link-color: var(--bs-primary);
-    --link-hover-color: #0056b3;
+  /* Table colors */
+  --table-bg: var(--bs-white);
+  --table-border: var(--bs-light);
+  --table-striped-bg: var(--bs-light);
 }
 
+.btn-primary {
+  background-color: var(--bs-primary) !important;
+  border-color: var(--bs-primary) !important;
+}
+.btn-primary:hover {
+  background-color: var(--bs-secondary) !important;
+  border-color: var(--bs-secondary) !important;
+}
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: var(--bs-dark) !important;
+  border-color: var(--bs-dark) !important;
+}
 
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {    --bs-nav-pills-link-active-bgcolor: var(--bs-secondary);
-    --bs-nav-pills-link-active-bg: var(--bs-secondary);
-    --bs-nav-pills-link-active-color: var(--bs-white);
-    color: var(--bs-nav-pills-link-active-color);
-    background-color: var(--bs-nav-pills-link-active-bg);
+/* Outline button styles */
+.btn-outline-primary {
+  color: var(--bs-primary) !important;
+  border-color: var(--bs-primary) !important;
+  background-color: transparent !important;
+}
+.btn-outline-primary:hover {
+  color: var(--white) !important;
+  background-color: var(--bs-primary) !important;
+  border-color: var(--bs-primary) !important;
+}
+.btn-outline-primary:active,
+.btn-outline-primary:focus {
+  color: var(--white) !important;
+  background-color: var(--bs-dark) !important;
+  border-color: var(--bs-dark) !important;
+}
+
+.text-muted {
+  color: var(--bs-muted) !important;
+}
+
+a {
+  color: var(--bs-link-color);
+}
+a:hover {
+  color: var(--bs-link-hover-color);
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-color: var(--card-border);
+}
+
+.card-header {
+  background-color: var(--card-header-bg);
+}
+
+.table {
+  background-color: var(--table-bg);
+  border-color: var(--table-border);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--table-striped-bg);
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  --bs-nav-pills-link-active-bgcolor: var(--bs-secondary);
+  --bs-nav-pills-link-active-bg: var(--bs-secondary);
+  --bs-nav-pills-link-active-color: var(--white);
+  color: var(--bs-nav-pills-link-active-color);
+  background-color: var(--bs-nav-pills-link-active-bg);
 }
 
 .nav-link:hover {
-    color: var(--bs-nav-pills-link-active-color);
-}
-
-/* ========================================
-   BOOTSTRAP OVERRIDES
-   ======================================== */
-
-/* Override Bootstrap's default colors with our custom properties */
-.btn-primary {
-    background-color: var(--btn-primary-bg) !important;
-    border-color: var(--btn-primary-border) !important;
-}
-
-.btn-primary:hover {
-    background-color: var(--btn-primary-hover-bg) !important;
-    border-color: var(--btn-primary-hover-border) !important;
-}
-
-.btn-primary:active,
-.btn-primary:focus {
-    background-color: var(--btn-primary-active-bg) !important;
-    border-color: var(--btn-primary-active-border) !important;
+  color: var(--wisteria);
 }
 
 /* Alert overrides */
 .alert-primary {
-    background-color: var(--alert-primary-bg) !important;
-    border-color: var(--alert-primary-border) !important;
-    color: var(--alert-primary-text) !important;
+  background-color: rgba(var(--bs-primary-rgb), 0.1) !important;
+  border-color: rgba(var(--bs-primary-rgb), 0.2) !important;
+  color: var(--bs-primary) !important;
 }
 
 /* Form control overrides */
 .form-control:focus {
-    border-color: var(--form-control-focus-border) !important;
-    box-shadow: 0 0 0 0.2rem var(--form-control-focus-box-shadow) !important;
+  border-color: var(--bs-primary) !important;
+  box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25) !important;
 }
 
-/* Link overrides */
-a {
-    color: var(--link-color);
+/* Badge overrides */
+.badge.bg-primary {
+  background-color: var(--ultramarine) !important;
+  color: var(--white);
 }
 
-a:hover {
-    color: var(--link-hover-color);
+.badge.bg-secondary {
+  background-color: var(--persian-blue) !important;
+  color: var(--white);
 }
 
-/* Card overrides */
-.card {
-    background-color: var(--card-bg);
-    border-color: var(--card-border);
+.badge.bg-success {
+  background-color: var(--tropical-indigo) !important;
+  color: var(--white);
 }
 
-.card-header {
-    background-color: var(--card-header-bg);
+.badge.bg-info {
+  background-color: var(--lavender-web) !important;
+  color: var(--eerie-black);
 }
 
-/* Table overrides */
-.table {
-    background-color: var(--table-bg);
-    border-color: var(--table-border);
+.badge.bg-warning {
+  background-color: var(--wisteria) !important;
+  color: var(--eerie-black);
 }
 
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: var(--table-striped-bg);
+.badge.bg-danger {
+  background-color: var(--slate-blue) !important;
+  color: var(--white);
 }
 
-/* ========================================
-   QUICK COLOR CHANGE EXAMPLES
-   ======================================== */
-
-/* 
-   To change colors, simply modify the CSS custom properties above.
-   Here are some example themes you can uncomment and use:
-*/
-
-/* 
-   Example 1: Green Theme
-   Uncomment the block below to apply a green theme
-*/
-/*
-:root {
-    --bs-primary: #28a745;
-    --bs-primary-rgb: 40, 167, 69;
-    --custom-accent: #28a745;
-    --custom-accent-hover: #1e7e34;
-    --custom-accent-light: #d4edda;
-    --custom-accent-dark: #155724;
+/* Remove text-dark override since we're handling colors directly */
+.badge[class*="bg-"] {
+  font-weight: 500;
+  padding: 0.4em 0.7em;
 }
-*/
-
-/* 
-   Example 2: Purple Theme
-   Uncomment the block below to apply a purple theme
-*/
-/*
-:root {
-    --bs-primary: #6f42c1;
-    --bs-primary-rgb: 111, 66, 193;
-    --custom-accent: #6f42c1;
-    --custom-accent-hover: #5a32a3;
-    --custom-accent-light: #e8d5f7;
-    --custom-accent-dark: #4a1d7a;
-}
-*/
-
-/* 
-   Example 3: Orange Theme
-   Uncomment the block below to apply an orange theme
-*/
-/*
-:root {
-    --bs-primary: #fd7e14;
-    --bs-primary-rgb: 253, 126, 20;
-    --custom-accent: #fd7e14;
-    --custom-accent-hover: #e8690b;
-    --custom-accent-light: #ffe8d1;
-    --custom-accent-dark: #b35c0a;
-}
-*/
-
-/* 
-   Example 4: Dark Blue Theme
-   Uncomment the block below to apply a dark blue theme
-*/
-/*
-:root {
-    --bs-primary: #1e3a8a;
-    --bs-primary-rgb: 30, 58, 138;
-    --custom-accent: #1e3a8a;
-    --custom-accent-hover: #1e40af;
-    --custom-accent-light: #dbeafe;
-    --custom-accent-dark: #1e40af;
-}
-*/ 
