@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            width: 100vw;
+        }
+        .bg-hero {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: linear-gradient(135deg, #a18cd1 0%, #6d4bc1 60%, #2d1457 100%);
+        }
+        .login-main-card {
+            background: #18143a;
+            border-radius: 2rem;
+            box-shadow: 0 8px 40px 0 rgba(31,38,135,0.18);
+            max-width: 750px;
+            width: 98vw;
+            min-height: 520px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .login-navbar {
+            background: transparent;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 1.2rem 2.2rem 1.2rem 2.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .login-navbar .logo {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .login-navbar .nav {
+            gap: 1.5rem;
+        }
+        .login-navbar .nav-link {
+            color: #e0e0e0;
+            font-weight: 500;
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+        .login-navbar .nav-link.active, .login-navbar .nav-link:hover {
+            color: #fff;
+            opacity: 1;
+        }
+        .login-navbar .btn {
+            border-radius: 1rem;
+            font-weight: 600;
+            padding: 0.4rem 1.2rem;
+            font-size: 1rem;
+        }
+        .login-content {
+            display: flex;
+            flex: 1 1 auto;
+            min-height: 0;
+        }
+        .login-left {
+            flex: 1 1 0;
+            padding: 2.5rem 2.5rem 2rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .login-left {
+            background: rgba(24,20,58,0.98);
+            border-right: 1px solid rgba(255,255,255,0.06);
+            align-items: center;
+        }
+        .login-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #a18cd1;
+        }
+        .login-form {
+            width: 100%;
+            max-width: 320px;
+        }
+        .login-form .form-control {
+            background: transparent;
+            border: 1.5px solid #fff;
+            color: #fff;
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1.1rem;
+        }
+        .login-form .form-control::placeholder {
+            color: #cfc6e6;
+            opacity: 1;
+        }
+        .login-form .btn-login {
+            background: linear-gradient(90deg, #a18cd1 0%, #f953c6 100%);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.7rem 0;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 8px 0 rgba(169,76,255,0.12);
+            transition: transform 0.12s;
+        }
+        .login-form .btn-login:hover {
+            transform: scale(1.03);
+            background: linear-gradient(90deg, #f953c6 0%, #a18cd1 100%);
+        }
+        .login-form .form-check-label, .login-form .form-check-input {
+            color: #cfc6e6;
+        }
+        .login-form .forgot-link {
+            color: #a18cd1;
+            text-decoration: underline;
+            font-size: 0.97rem;
+        }
+        .login-form .forgot-link:hover {
+            color: #f953c6;
+        }
+        .login-form .remember-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.7rem;
+        }
+        .login-welcome {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            margin-top: 2.5rem;
+        }
+        .login-desc {
+            font-size: 1.1rem;
+            color: #cfc6e6;
+            margin-bottom: 2.5rem;
+            max-width: 350px;
+        }
+        .login-signup {
+            color: #fff;
+            font-size: 1rem;
+        }
+        .login-signup a {
+            color: #a18cd1;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .login-signup a:hover {
+            color: #f953c6;
+        }
+        .swirl-bg {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 70%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        @media (max-width: 900px) {
+            .login-main-card { flex-direction: column; min-height: 0; }
+            .login-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); padding: 2rem 1.2rem; }
+            .swirl-bg { left: 0; width: 100%; }
+        }
+        @media (max-width: 600px) {
+            .login-main-card { box-shadow: none; }
+            .login-left { padding: 1.2rem 0.5rem; }
+            .login-welcome { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-hero"></div>
+    <div class="d-flex justify-content-center align-items-center" style="min-height:100vh; position:relative; z-index:2;">
+        <div class="login-main-card">
+            <div class="login-content flex-grow-1">
+                <div class="login-left">
+                    <div class="login-avatar mb-4"><i class="bi bi-person-circle"></i></div>
+                    <form class="login-form">
+                        <input type="text" class="form-control" placeholder="Username" required>
+                        <input type="password" class="form-control" placeholder="Password" required>
+                        <button type="submit" class="btn btn-login w-100">LOGIN</button>
+                        <div class="remember-row">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot-link">Forgot your password?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

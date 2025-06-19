@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM - Customer Relationship Management</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top flex-column">
+        <div class="container-fluid w-100">
+            <button class="navbar-toggler me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" href="crm.html"><i class="bi bi-people me-1"></i>CRM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="leads.html"><i class="bi bi-person-lines-fill me-1"></i>Leads</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="proposals.html"><i class="bi bi-file-earmark-text me-1"></i>Proposals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sale-orders.html"><i class="bi bi-bag-check me-1"></i>Sale Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fcos.html"><i class="bi bi-file-earmark-bar-graph me-1"></i>FCOs</a>
+                </li>
+            </ul>
+            <div class="ms-auto d-flex align-items-center">
+                <a class="navbar-brand me-3" href="account.html">My Account</a>
+                <a class="navbar-brand" href="login.html" title="Logout">
+                    <i class="bi bi-box-arrow-right" style="font-size: 1.1rem; opacity: 0.8;"></i>
+                </a>
+            </div>
+        </div>
+        <!-- CRM Sub-navbar inside main navbar -->
+        
+    </nav>
+
+    <!-- Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarLabel">
+                <img src="asset/company-logo.jpg" alt="Company Logo">
+                <span>My Company</span>
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="bi bi-house"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="crm.html">
+                        <i class="bi bi-people"></i>
+                        <span>CRM</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sales.html">
+                        <i class="bi bi-graph-up"></i>
+                        <span>Sales</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="product.html">
+                        <i class="bi bi-box"></i>
+                        <span>Product</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user-management.html">
+                        <i class="bi bi-person-gear"></i>
+                        <span>User Management</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main content area -->
+    <main class="main-content">
+        <div class="row g-4 mb-4">
+            <!-- Visitors Card -->
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-muted">Visitors</span>
+                        </div>
+                        <div class="mb-1" style="font-size:2rem; font-weight:600;">5,927 <span class="text-success" style="font-size:1rem; font-weight:500;">+55%</span></div>
+                        <div class="text-muted" style="font-size:0.9rem;">Apr - Dec</div>
+                        <!-- Chart.js chart placeholder -->
+                        <div class="d-flex justify-content-center">
+                            <canvas id="visitorsChart" width="240" height="48"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Income Card -->
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-muted">Income</span>
+                        </div>
+                        <div class="mb-1" style="font-size:2rem; font-weight:600;">$130,832 <span class="text-success" style="font-size:1rem; font-weight:500;">+90%</span></div>
+                        <div class="text-muted" style="font-size:0.9rem;">Apr - Dec</div>
+                        <!-- Chart.js chart placeholder -->
+                        <div class="d-flex justify-content-center">
+                            <canvas id="incomeChart" width="240" height="48"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calendar Section -->
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-body">
+                <div class="mb-2">
+                    <div class="fw-bold" style="font-size:1.2rem;">Calendar</div>
+                    <div class="text-muted">December 2025</div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table calendar-table mb-0">
+                        <thead>
+                            <tr class="text-center text-muted">
+                                <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="align-top"></td>
+                                <td class="align-top">1<br><span class="event event-blue">Meeting with Mary</span></td>
+                                <td class="align-top">2<br><span class="event event-orange">Cyber Week</span></td>
+                                <td class="align-top">3<br><span class="event event-red">Winter Hackaton</span></td>
+                                <td class="align-top">4</td>
+                                <td class="align-top">5</td>
+                                <td class="align-top">6</td>
+                            </tr>
+                            <tr>
+                                <td class="align-top">7<br><span class="event event-green">All day conference</span></td>
+                                <td class="align-top">8<br><span class="event event-orange">Digital event</span></td>
+                                <td class="align-top">9</td>
+                                <td class="align-top">10</td>
+                                <td class="align-top">11</td>
+                                <td class="align-top">12</td>
+                                <td class="align-top">13</td>
+                            </tr>
+                            <tr>
+                                <td class="align-top">14</td>
+                                <td class="align-top">15</td>
+                                <td class="align-top">16</td>
+                                <td class="align-top">17</td>
+                                <td class="align-top">18</td>
+                                <td class="align-top">19<br><span class="event event-red">Dinner with Family</span></td>
+                                <td class="align-top">20</td>
+                            </tr>
+                            <tr>
+                                <td class="align-top">21</td>
+                                <td class="align-top">22</td>
+                                <td class="align-top">23<br><span class="event event-blue">Black Friday</span></td>
+                                <td class="align-top">24</td>
+                                <td class="align-top">25</td>
+                                <td class="align-top">26</td>
+                                <td class="align-top">27</td>
+                            </tr>
+                            <tr>
+                                <td class="align-top">28</td>
+                                <td class="align-top">29</td>
+                                <td class="align-top">30</td>
+                                <td class="align-top">31</td>
+                                <td class="align-top"></td>
+                                <td class="align-top"></td>
+                                <td class="align-top"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <style>
+    /* Modern event colors and calendar styles */
+    .event {
+        display: inline-block;
+        padding: 0.25rem 1rem;
+        border-radius: 0.7rem;
+        color: #fff;
+        font-size: 0.98rem;
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .event-green { background: #22c55e; }
+    .event-blue { background: #3b82f6; }
+    .event-orange { background: linear-gradient(90deg, #fbbf24 0%, #f87171 100%); }
+    .event-red { background: #ef4444; }
+    .event-purple { background: #a21caf; }
+    .calendar-table td, .calendar-table th {
+        min-width: 110px;
+        height: 48px;
+        vertical-align: top;
+        border-radius: 0.7rem;
+        width: 14.2857%; /* 100% / 7 columns */
+        max-width: 14.2857%;
+        text-align: left;
+    }
+    .calendar-table {
+        background: #fff;
+        border-radius: 1.2rem;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+        overflow: hidden;
+    }
+    </style>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    // Visitors chart data and config
+    const visitorsCtx = document.getElementById('visitorsChart').getContext('2d');
+    new Chart(visitorsCtx, {
+        type: 'line',
+        data: {
+            labels: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                data: [40, 50, 60, 80, 70, 90, 85, 95, 110],
+                borderColor: '#c026d3', // purple
+                backgroundColor: 'rgba(192,38,211,0.08)',
+                tension: 0.4,
+                fill: true,
+                pointRadius: 0,
+                borderWidth: 2
+            }]
+        },
+        options: {
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { display: false },
+                y: { display: false }
+            },
+            elements: { line: { borderCapStyle: 'round' } },
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+    // Income chart data and config
+    const incomeCtx = document.getElementById('incomeChart').getContext('2d');
+    new Chart(incomeCtx, {
+        type: 'line',
+        data: {
+            labels: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                data: [60, 80, 90, 100, 110, 120, 115, 130, 140],
+                borderColor: '#c026d3',
+                backgroundColor: 'rgba(192,38,211,0.08)',
+                tension: 0.4,
+                fill: true,
+                pointRadius: 0,
+                borderWidth: 2
+            }]
+        },
+        options: {
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { display: false },
+                y: { display: false }
+            },
+            elements: { line: { borderCapStyle: 'round' } },
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+    </script>
+</body>
+</html> 

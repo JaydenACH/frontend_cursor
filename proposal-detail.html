@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal Detail</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+    <style>
+        .action-bar {
+            background: #f8f9fa;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1rem 1.5rem 0.5rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .action-bar .btn {
+            font-weight: 600;
+            border-radius: 0.5rem;
+            padding: 0.35rem 1rem;
+        }
+        .action-bar .btn-danger { font-weight: 700; }
+        .action-bar .btn-primary { font-weight: 700; }
+        .section-title {
+            font-weight: 700;
+            font-size: 1.08rem;
+            margin-top: 2rem;
+            margin-bottom: 0.7rem;
+            letter-spacing: 0.01em;
+        }
+        .prop-label {
+            color: #555;
+            font-weight: 500;
+            min-width: 140px;
+        }
+        .prop-value {
+            color: #222;
+            font-weight: 400;
+        }
+        .prop-row {
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 900px) {
+            .action-bar { flex-direction: column; align-items: stretch; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top flex-column">
+        <div class="container-fluid d-flex align-items-center">
+            <button class="navbar-toggler me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="crm.html">CRM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="leads.html">Leads</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="proposals.html">Proposals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sale-orders.html">Sale Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fcos.html">FCOs</a>
+                </li>
+            </ul>
+            <div class="ms-auto d-flex align-items-center">
+                <a class="navbar-brand me-3" href="account.html">My Account</a>
+                <a class="navbar-brand" href="login.html" title="Logout">
+                    <i class="bi bi-box-arrow-right" style="font-size: 1.1rem; opacity: 0.8;"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarLabel">
+                <img src="asset/company-logo.jpg" alt="Company Logo">
+                <span>Dashboard</span>
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="bi bi-house"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="crm.html">
+                        <i class="bi bi-people"></i>
+                        <span>CRM</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sales.html">
+                        <i class="bi bi-graph-up"></i>
+                        <span>Sales</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="product.html">
+                        <i class="bi bi-box"></i>
+                        <span>Product</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user-management.html">
+                        <i class="bi bi-person-gear"></i>
+                        <span>User Management</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Main content area -->
+    <main class="main-content" style="margin-top: 64px;">
+        <!-- Action Buttons -->
+        <div class="action-bar sticky-top">
+            <button class="btn btn-outline-primary">SUBMIT PAYMENT</button>
+            <button class="btn btn-danger">MARK AS LOST</button>
+            <button class="btn btn-outline-secondary">REVISE</button>
+            <button class="btn btn-outline-secondary">IMPORT ATTACHMENT</button>
+            <button class="btn btn-outline-secondary">IMPORT SOSB ATTACHMENT</button>
+            <button class="btn btn-outline-secondary">IMPORT CALCULATION LOGS</button>
+            <button class="btn btn-outline-secondary">REFRESH QUOTATION</button>
+            <button class="btn btn-outline-secondary">APPLY VOUCHER</button>
+            <button class="btn btn-primary ms-auto">PROPOSAL</button>
+        </div>
+        <div class="container-fluid py-4">
+            <div class="card shadow-sm border-0 mb-4">
+                <div class="card-body">
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <div class="prop-label mb-1">Proposal No.</div>
+                            <div class="h5 mb-3">S-Q2025BJC12911</div>
+                            <div class="prop-row"><span class="prop-label">Customer Name</span> <span class="prop-value ms-2">A'kif A'ffan</span></div>
+                            <div class="prop-row"><span class="prop-label">Customer Mobile</span> <span class="prop-value ms-2">60172946771</span></div>
+                            <div class="prop-row"><span class="prop-label">Detailer</span> <span class="prop-value ms-2"></span></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="prop-row"><span class="prop-label">Potential to Close Sale</span> <span class="prop-value ms-2">Low (25%)</span></div>
+                            <div class="prop-row"><span class="prop-label">Proposal Date</span> <span class="prop-value ms-2">06/19/2025</span></div>
+                            <div class="prop-row"><span class="prop-label">SO Date</span> <span class="prop-value ms-2"></span></div>
+                            <div class="prop-row"><span class="prop-label">Expected Close Date</span> <span class="prop-value ms-2">06/19/2025</span></div>
+                            <div class="prop-row"><span class="prop-label">Exhibition/Event</span> <span class="prop-value ms-2">Pavilion Bukit Jalil Grand Opening June 2025</span></div>
+                            <div class="prop-row"><span class="prop-label">Actual Delivery Date</span> <span class="prop-value ms-2"></span></div>
+                            <div class="prop-row"><span class="prop-label">Actual Installation Date</span> <span class="prop-value ms-2"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Installation Address Section -->
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <div class="section-title">INSTALLATION ADDRESS</div>
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <div class="prop-row"><span class="prop-label">Address 1</span> <span class="prop-value ms-2">30, Jalan USJ Heights 3/2G</span></div>
+                            <div class="prop-row"><span class="prop-label">Address 2</span> <span class="prop-value ms-2"></span></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="prop-row"><span class="prop-label">State</span> <span class="prop-value ms-2">Selangor (MY)</span></div>
+                            <div class="prop-row"><span class="prop-label">City / Town</span> <span class="prop-value ms-2">Subang Jaya</span></div>
+                            <div class="prop-row"><span class="prop-label">Postcode</span> <span class="prop-value ms-2">47620</span></div>
+                            <div class="prop-row"><span class="prop-label">Country</span> <span class="prop-value ms-2">Malaysia</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

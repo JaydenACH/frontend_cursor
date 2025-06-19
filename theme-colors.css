@@ -1,0 +1,231 @@
+/* ========================================
+   BOOTSTRAP COLOR CUSTOMIZATION SYSTEM
+   ======================================== */
+
+/* CSS Custom Properties for easy color customization */
+:root {
+    /* Primary Bootstrap Colors - Change these to customize your theme */
+    --bs-primary: #7723af;
+    --bs-primary-rgb: 0, 123, 255;
+    --bs-secondary: #a944ec;
+    --bs-secondary-rgb: 108, 117, 125;
+    --bs-success: #2ca728;
+    --bs-success-rgb: 40, 167, 69;
+    --bs-info: #168c9e;
+    --bs-info-rgb: 23, 162, 184;
+    --bs-warning: #ffc107;
+    --bs-warning-rgb: 255, 193, 7;
+    --bs-danger: #dc3545;
+    --bs-danger-rgb: 220, 53, 69;
+    --bs-light: #f8f9fa;
+    --bs-light-rgb: 248, 249, 250;
+    --bs-dark: #4e4e4e;
+    --bs-dark-rgb: 52, 58, 64;
+    --bs-body-bg: #ffffff;
+    --bs-link-color: #dca7ff;
+
+    /* Additional Colors */
+    --bs-white: #ffffff;
+    --bs-black: #000000;
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #ced4da;
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #6c757d;
+    --bs-gray-700: #8a8a8a;
+    --bs-gray-800: #343a40;
+    --bs-gray-900: #212529;
+
+    /* Custom Theme Colors - Add your own colors here */
+    --custom-accent: #007bff;
+    --custom-accent-hover: #0056b3;
+    --custom-accent-light: #e3f2fd;
+    --custom-accent-dark: #004085;
+
+    /* Component-specific colors */
+    --navbar-bg: var(--bs-dark);
+    --navbar-text: var(--bs-white);
+    --sidebar-bg: var(--bs-dark);
+    --sidebar-text: var(--bs-gray-500);
+    --sidebar-text-hover: var(--bs-white);
+    --sidebar-bg-hover: var(--bs-gray-700);
+    --sidebar-active-bg: var(--bs-primary);
+    --sidebar-active-text: var(--bs-white);
+    --sidebar-border: var(--bs-gray-700);
+    /* Button variations */
+    --btn-primary-bg: var(--bs-primary);
+    --btn-primary-border: var(--bs-primary);
+    --btn-primary-hover-bg: #9a2ee2;
+    --btn-primary-hover-border: #5b1f83;
+    --btn-primary-active-bg: #004085;
+    --btn-primary-active-border: #004085;
+
+    /* Card colors */
+    --card-bg: var(--bs-white);
+    --card-border: var(--bs-gray-300);
+    --card-header-bg: var(--bs-gray-100);
+
+    /* Form colors */
+    --form-control-border: var(--bs-gray-400);
+    --form-control-focus-border: var(--bs-primary);
+    --form-control-focus-box-shadow: rgba(var(--bs-primary-rgb), 0.25);
+
+    /* Alert colors */
+    --alert-primary-bg: rgba(var(--bs-primary-rgb), 0.1);
+    --alert-primary-border: rgba(var(--bs-primary-rgb), 0.2);
+    --alert-primary-text: var(--bs-primary);
+
+    /* Table colors */
+    --table-bg: var(--bs-white);
+    --table-border: var(--bs-gray-300);
+    --table-striped-bg: var(--bs-gray-100);
+
+    /* Link colors */
+    --link-color: var(--bs-primary);
+    --link-hover-color: #0056b3;
+}
+
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {    --bs-nav-pills-link-active-bgcolor: var(--bs-secondary);
+    --bs-nav-pills-link-active-bg: var(--bs-secondary);
+    --bs-nav-pills-link-active-color: var(--bs-white);
+    color: var(--bs-nav-pills-link-active-color);
+    background-color: var(--bs-nav-pills-link-active-bg);
+}
+
+.nav-link:hover {
+    color: var(--bs-nav-pills-link-active-color);
+}
+
+/* ========================================
+   BOOTSTRAP OVERRIDES
+   ======================================== */
+
+/* Override Bootstrap's default colors with our custom properties */
+.btn-primary {
+    background-color: var(--btn-primary-bg) !important;
+    border-color: var(--btn-primary-border) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-primary-hover-bg) !important;
+    border-color: var(--btn-primary-hover-border) !important;
+}
+
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: var(--btn-primary-active-bg) !important;
+    border-color: var(--btn-primary-active-border) !important;
+}
+
+/* Alert overrides */
+.alert-primary {
+    background-color: var(--alert-primary-bg) !important;
+    border-color: var(--alert-primary-border) !important;
+    color: var(--alert-primary-text) !important;
+}
+
+/* Form control overrides */
+.form-control:focus {
+    border-color: var(--form-control-focus-border) !important;
+    box-shadow: 0 0 0 0.2rem var(--form-control-focus-box-shadow) !important;
+}
+
+/* Link overrides */
+a {
+    color: var(--link-color);
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Card overrides */
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+}
+
+.card-header {
+    background-color: var(--card-header-bg);
+}
+
+/* Table overrides */
+.table {
+    background-color: var(--table-bg);
+    border-color: var(--table-border);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--table-striped-bg);
+}
+
+/* ========================================
+   QUICK COLOR CHANGE EXAMPLES
+   ======================================== */
+
+/* 
+   To change colors, simply modify the CSS custom properties above.
+   Here are some example themes you can uncomment and use:
+*/
+
+/* 
+   Example 1: Green Theme
+   Uncomment the block below to apply a green theme
+*/
+/*
+:root {
+    --bs-primary: #28a745;
+    --bs-primary-rgb: 40, 167, 69;
+    --custom-accent: #28a745;
+    --custom-accent-hover: #1e7e34;
+    --custom-accent-light: #d4edda;
+    --custom-accent-dark: #155724;
+}
+*/
+
+/* 
+   Example 2: Purple Theme
+   Uncomment the block below to apply a purple theme
+*/
+/*
+:root {
+    --bs-primary: #6f42c1;
+    --bs-primary-rgb: 111, 66, 193;
+    --custom-accent: #6f42c1;
+    --custom-accent-hover: #5a32a3;
+    --custom-accent-light: #e8d5f7;
+    --custom-accent-dark: #4a1d7a;
+}
+*/
+
+/* 
+   Example 3: Orange Theme
+   Uncomment the block below to apply an orange theme
+*/
+/*
+:root {
+    --bs-primary: #fd7e14;
+    --bs-primary-rgb: 253, 126, 20;
+    --custom-accent: #fd7e14;
+    --custom-accent-hover: #e8690b;
+    --custom-accent-light: #ffe8d1;
+    --custom-accent-dark: #b35c0a;
+}
+*/
+
+/* 
+   Example 4: Dark Blue Theme
+   Uncomment the block below to apply a dark blue theme
+*/
+/*
+:root {
+    --bs-primary: #1e3a8a;
+    --bs-primary-rgb: 30, 58, 138;
+    --custom-accent: #1e3a8a;
+    --custom-accent-hover: #1e40af;
+    --custom-accent-light: #dbeafe;
+    --custom-accent-dark: #1e40af;
+}
+*/ 

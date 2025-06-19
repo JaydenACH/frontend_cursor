@@ -1,0 +1,266 @@
+/* ========================================
+   IMPORT THEME COLORS
+   ======================================== */
+@import "theme-colors.css";
+
+/* ========================================
+   LAYOUT AND COMPONENT STYLES
+   ======================================== */
+
+/* Custom styles for navbar */
+.navbar {
+    z-index: 1030;
+    background-color: var(--navbar-bg) !important;
+}
+
+.navbar-brand {
+    color: var(--navbar-text) !important;
+}
+
+.navbar-brand img {
+    border-radius: 4px;
+}
+
+/* Custom styles for offcanvas sidebar */
+.offcanvas {
+    background-color: var(--sidebar-bg);
+    border-right: none;
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid var(--sidebar-border);
+    padding: 15px 20px;
+}
+
+.offcanvas-title {
+    color: var(--sidebar-text-hover);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.offcanvas-title img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.offcanvas-body {
+    padding: 0;
+}
+
+.offcanvas .nav-link {
+    color: var(--sidebar-text);
+    padding: 12px 20px;
+    margin: 2px 0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.offcanvas .nav-link:hover {
+    background-color: var(--sidebar-bg-hover);
+    color: var(--sidebar-text-hover);
+}
+
+.offcanvas .nav-link.active {
+    background-color: var(--sidebar-active-bg);
+    color: var(--sidebar-active-text);
+}
+
+.offcanvas .nav-link i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Toggle button styles */
+.sidebar-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1050;
+    background-color: var(--custom-accent);
+    border: none;
+    color: var(--bs-white);
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    background-color: var(--custom-accent-hover);
+}
+
+/* Main content adjustments */
+.main-content {
+    padding: 20px;
+    margin-top: 56px; /* Account for fixed navbar height */
+    margin-left: 0; /* No left margin by default */
+}
+
+/* Responsive adjustments - Sidebar always hidden by default */
+@media (min-width: 992px) {
+    .main-content {
+        margin-left: 0; /* No left margin on desktop */
+        margin-top: 56px;
+    }
+    
+    /* Always show the navbar toggler */
+    .navbar-toggler {
+        display: block !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .offcanvas {
+        z-index: 1045;
+    }
+}
+
+/* ========================================
+   QUICK COLOR CHANGE EXAMPLES
+   ======================================== */
+
+/* 
+   To change colors, simply modify the CSS custom properties above.
+   Here are some example themes you can uncomment and use:
+*/
+
+/* 
+   Example 1: Green Theme
+   Uncomment the block below to apply a green theme
+*/
+/*
+:root {
+    --bs-primary: #28a745;
+    --bs-primary-rgb: 40, 167, 69;
+    --custom-accent: #28a745;
+    --custom-accent-hover: #1e7e34;
+    --custom-accent-light: #d4edda;
+    --custom-accent-dark: #155724;
+}
+*/
+
+/* 
+   Example 2: Purple Theme
+   Uncomment the block below to apply a purple theme
+*/
+/*
+:root {
+    --bs-primary: #6f42c1;
+    --bs-primary-rgb: 111, 66, 193;
+    --custom-accent: #6f42c1;
+    --custom-accent-hover: #5a32a3;
+    --custom-accent-light: #e8d5f7;
+    --custom-accent-dark: #4a1d7a;
+}
+*/
+
+/* 
+   Example 3: Orange Theme
+   Uncomment the block below to apply an orange theme
+*/
+/*
+:root {
+    --bs-primary: #fd7e14;
+    --bs-primary-rgb: 253, 126, 20;
+    --custom-accent: #fd7e14;
+    --custom-accent-hover: #e8690b;
+    --custom-accent-light: #ffe8d1;
+    --custom-accent-dark: #b35c0a;
+}
+*/
+
+/* 
+   Example 4: Dark Blue Theme
+   Uncomment the block below to apply a dark blue theme
+*/
+/*
+:root {
+    --bs-primary: #1e3a8a;
+    --bs-primary-rgb: 30, 58, 138;
+    --custom-accent: #1e3a8a;
+    --custom-accent-hover: #1e40af;
+    --custom-accent-light: #dbeafe;
+    --custom-accent-dark: #1e40af;
+}
+*/
+
+body {
+    background: #f6f7fb;
+}
+
+.card {
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    transition: box-shadow 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+}
+
+.card-header {
+    background: transparent;
+    border-bottom: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.text-muted {
+    color: #7a7a8c !important;
+    font-weight: 400;
+}
+
+.card-body {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06), 0 3px 6px rgba(0,0,0,0.04);
+    border-radius: 0.75rem;
+    background: #fff;
+}
+
+/* Smooth scaling for interactive elements */
+.btn,
+.nav-link,
+.sidebar-toggle,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    transition: transform 0.15s cubic-bezier(.4,2,.6,1), box-shadow 0.15s;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+}
+
+.btn:focus,
+.btn:active {
+    transform: none;
+}
+
+.clickable-row {
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+.clickable-row:hover > td {
+    background: #d0ace7;
+    transition: background 0.15s;
+}
+.clickable-row:hover {
+    transform: scale(1.015);
+    z-index: 1;
+    position: relative;
+}
+.clickable-row:focus,
+.clickable-row:active {
+    transform: none;
+}
+.clickable-row button:focus,
+.clickable-row button:active {
+    transform: none !important;
+} 
