@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Roboto Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="style.css" rel="stylesheet">
 </head>
@@ -43,6 +45,17 @@
             </div>
         </div>
     </nav>
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="markAsLostToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="bi bi-x-circle me-2"></i>Lead has been marked as lost
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
     <!-- Offcanvas Sidebar -->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
         <div class="offcanvas-header">
@@ -140,7 +153,7 @@
                                     <td>Anna White</td>
                                     <td>2024-06-05</td>
                                     <td>2024-06-06</td>
-                                    <td><span class="badge bg-warning text-dark">Contacted</span></td>
+                                    <td><span class="badge bg-warning">Contacted</span></td>
                                 </tr>
                                 <tr class="clickable-row" data-href="lead-detail.html">
                                     <td>Rent</td>
@@ -184,7 +197,7 @@
                                     <td>Anna White</td>
                                     <td>2024-06-13</td>
                                     <td>2024-06-14</td>
-                                    <td><span class="badge bg-warning text-dark">Contacted</span></td>
+                                    <td><span class="badge bg-warning">Contacted</span></td>
                                 </tr>
                                 <tr class="clickable-row" data-href="lead-detail.html">
                                     <td>Rent</td>
@@ -228,7 +241,7 @@
                                     <td>Anna White</td>
                                     <td>2024-06-21</td>
                                     <td>2024-06-22</td>
-                                    <td><span class="badge bg-warning text-dark">Contacted</span></td>
+                                    <td><span class="badge bg-warning">Contacted</span></td>
                                 </tr>
                                 <tr class="clickable-row" data-href="lead-detail.html">
                                     <td>Rent</td>
@@ -272,7 +285,7 @@
                                     <td>Anna White</td>
                                     <td>2024-06-29</td>
                                     <td>2024-06-30</td>
-                                    <td><span class="badge bg-warning text-dark">Contacted</span></td>
+                                    <td><span class="badge bg-warning">Contacted</span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -293,5 +306,23 @@
     </script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check URL parameters for toast trigger
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('showToast') === 'lost') {
+                const toast = new bootstrap.Toast(document.getElementById('markAsLostToast'), {
+                    animation: true,
+                    autohide: true,
+                    delay: 2000
+                });
+                toast.show();
+                
+                // Clean up the URL without refreshing the page
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        });
+    </script>
 </body>
 </html> 
